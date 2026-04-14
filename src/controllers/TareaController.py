@@ -1,15 +1,14 @@
-from src.models.TareaModel import TareaModel
-
+from src.models.TareasModel import TareaModel
 class TareaController:
-    def_init_(self):
+    def __init__(self):
         self.model = TareaModel()
         
-    def obtener_lista(self,id_usuario):
-        return self.model.lista_por_usuario(id_usuario)
-    def guardar_nueva(self,id_usuario,titulo,desc,prio,clas):
-        if not titulo:
-            return False, "El titulo es Obligatorio"
-        
-        self.model.crear(id_usuario,titulo,desc,prio,clas)
-        return True, "Tarea guardada"
+    def btener_lista(self, id_usuario):
+        return self.model.listar_por_usuario(id_usuario)
     
+    def guardar_nueva(self, id_usuario, titulo, descripcion, prioridad, clasificacion):
+        if not titulo:
+            return False, "El titulo es obligatorio"
+        
+        self.model.crear(self, id_usuario, titulo, descripcion, prioridad, clasificacion)
+        return True, "Tarea guardada"

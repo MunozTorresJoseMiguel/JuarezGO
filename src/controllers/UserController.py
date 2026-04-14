@@ -16,4 +16,3 @@ class AuthController:
             # Retorn el primer error de validacion encotrado
             
             return False, e.errors()[0],{'msg'}
-            
