@@ -14,14 +14,14 @@ dependencies = [
 ]
 
 [project.scripts]
-#aqui definimos el comando corto
-#quitamos el src porque definimos "src" como la raiz
-app="main:main"
+# Esto permite ejecutar tu app simplemente escribiendo 'app' en la terminal
+app = "main:main"
 
 [tool.uv]
-package = true
+# Si tu archivo main.py está en la raíz, cambia esto a false. 
+# Si tu código está dentro de una carpeta llamada 'src', déjalo en true.
+package = false 
 
-#Esta secion es crucial para que python vea el ontenido de sc como el nivel raiz 
-
-[tool.setuptools.package.dir]
-"" = "src"
+[tool.setuptools]
+# Esta es la forma correcta de decirle a Python dónde buscar el código
+package-dir = {"" = "src"}
