@@ -1,0 +1,17 @@
+README.md
+pyproject.toml
+src/controller/TareaController.py
+src/controller/UserController.py
+src/models/TareaModel.py
+src/models/UserModel.py
+src/models/databaseModel.py
+src/models/schemasModel.py
+src/tarea.egg-info/PKG-INFO
+src/tarea.egg-info/SOURCES.txt
+src/tarea.egg-info/dependency_links.txt
+src/tarea.egg-info/entry_points.txt
+src/tarea.egg-info/requires.txt
+src/tarea.egg-info/top_level.txt
+src/view/LoginView.py
+src/view/TareaView.py
+src/view/dashboardView.py

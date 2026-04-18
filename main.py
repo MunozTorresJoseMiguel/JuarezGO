@@ -1,8 +1,8 @@
 import flet as ft
 from controller.UserController import AuthController
 from controller.TareaController import TareaController
-from views.LoginView import LoginView
-from views.dashboardView import DashboardView
+from view.LoginView import LoginView
+from view.dashboardView import DashboardView
 
 def start(page: ft.Page):
     # instanciar controladores ua sola
