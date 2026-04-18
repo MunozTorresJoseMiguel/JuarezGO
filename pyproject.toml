@@ -14,14 +14,10 @@ dependencies = [
 ]
 
 [project.scripts]
-# Esto permite ejecutar tu app simplemente escribiendo 'app' en la terminal
 app = "main:main"
 
 [tool.uv]
-# Si tu archivo main.py está en la raíz, cambia esto a false. 
-# Si tu código está dentro de una carpeta llamada 'src', déjalo en true.
-package = false 
+package = true
 
-[tool.setuptools]
-# Esta es la forma correcta de decirle a Python dónde buscar el código
-package-dir = {"" = "src"}
+[tool.setuptools.package-dir]
+"" = "src"

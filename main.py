@@ -1,6 +1,6 @@
 import flet as ft
-from controllers.UserController import AuthController
-from controllers.TareaController import TareaController
+from controller.UserController import AuthController
+from controller.TareaController import TareaController
 from views.LoginView import LoginView
 from views.dashboardView import DashboardView
 
