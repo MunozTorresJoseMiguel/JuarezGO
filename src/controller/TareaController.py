@@ -1,4 +1,6 @@
-from TareasModel import TareaModel
+import sys
+import os
+from models.TareaModel import TareaModel
 class TareaController:
     def __init__(self):
         self.model = TareaModel()

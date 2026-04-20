@@ -1,3 +1,6 @@
+import sys
+import os
+sys.path.append(os.path.join(os.path.dirname(__file__), "src"))
 import flet as ft
 from controller.UserController import AuthController
 from controller.TareaController import TareaController
