@@ -8,33 +8,42 @@ from view.LoginView import LoginView
 from view.dashboardView import DashboardView
 
 def start(page: ft.Page):
-    # instanciar controladores ua sola
     auth_ctrl = AuthController()
     task_ctrl = TareaController()
+    page.title = "Sistema SIGE"
     
     def route_change(e):
         page.views.clear()
         
-        if e == "/":
-            page.add(ft.Text("Caso 1"))
+        if page.route == "/":
             page.views.append(LoginView(page, auth_ctrl))
             
-        elif e == "/dashboard":
+        elif page.route == "/dashboard":
             page.views.append(DashboardView(page, task_ctrl))
             
         if not page.views:
             page.views.append(
-                ft.View("/",[ft.Text("Error: Ruta no encontrada o vista vacia")])
+                ft.View("/", [ft.Text("Error: Ruta no encontrada o vista vacía")])
             )
         
-            #agregas aqui las vistas que necesites
         page.update()
-    page.on_route_change = route_change
+        
+    def view_pop(e):
+        if len(page.views) > 1:
+            page.views.pop()
+            top_view = page.views[-1]
+            page.go(top_view.route)
 
-    page.go("/")
-    
-def main ():
-    ft. app (target=start)
-    
+    page.on_route_change = route_change
+    page.on_view_pop = view_pop
+
+    if page.route == "/":
+        route_change(None)
+    else:
+        page.go("/")
+
+def main():
+    ft.app(target=start)
+
 if __name__ == "__main__":
     main()

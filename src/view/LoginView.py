@@ -1,8 +1,16 @@
 import flet as ft
 
 def LoginView(page, auth_controller):
-    email_input = ft.TextField(label="Correo Electrónico", width=350, border_radius=10)
-    pass_input = ft.TextField(label="Contraseña", width=350, password=True, can_reveal_password=True)
+    email_input = ft.TextField(
+        label="Correo Electrónico",
+        width=350,
+        border_radius=10)
+    
+    pass_input = ft.TextField(
+        label="Contraseña",
+        width=350,
+        password=True,
+        can_reveal_password=True)
     
     def login_click(e):
         user, msg = auth_controller.login(email_input.value, pass_input.value)
@@ -15,9 +23,9 @@ def LoginView(page, auth_controller):
             page.update()
         
         return ft.View("/login", [
-            ft.AppBar(title=ft.Text("SIGE - Login"), bgcolor = ft.Color.BLUE_GREY_900, color="white"),
+            ft.AppBar(title=ft.Text("SIGE - Login"), bgcolor = ft.color.BLUE_GREY_900, color="white"),
             ft.Column([
-                ft.Icon(ft.Icons.LOCK_PERSON, size=50, color=ft.Color.BLUE),
+                ft.icon(ft.icons.LOCK_PERSON, size=50, color=ft.color.BLUE),
                 ft.Text("Acceso al sistema ", size=24, weight="bold"),
                 email_input,
                 pass_input,
