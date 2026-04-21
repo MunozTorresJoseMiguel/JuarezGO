@@ -11,6 +11,11 @@ def start(page: ft.Page):
     auth_ctrl = AuthController()
     task_ctrl = TareaController()
     page.title = "Sistema SIGE"
+    page.window_width = 450
+    page.window_height = 700
+    
+    auth_ctrl = AuthController()
+    task_ctrl = TareaController()
     
     def route_change(e):
         page.views.clear()
