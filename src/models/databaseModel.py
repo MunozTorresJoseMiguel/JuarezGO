@@ -2,7 +2,7 @@ import mysql.connector
 import os
 from dotenv import load_dotenv
 
-load_dotenv
+load_dotenv()
 
 class Database:
     @staticmethod 
@@ -13,3 +13,4 @@ class Database:
             password=os.getenv("DB_PASSWORD"),
             database=os.getenv("DB_NAME")
         )
+        
